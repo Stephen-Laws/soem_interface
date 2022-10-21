@@ -160,6 +160,7 @@ bool EthercatBusBase::startup(const bool sizeCheck) {
 
   // Set up the communication IO mapping.
   // Note: ecx_config_map_group(..) requests the slaves to go to SAFE-OP.
+
   ecx_config_map_group(&ecatContext_, &ioMap_, 0);
 
   // Check if the size of the IO mapping fits our slaves.

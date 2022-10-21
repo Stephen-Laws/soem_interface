@@ -55,6 +55,11 @@
 #include "soem/soem/ethercatmain.h"
 #include "soem/soem/ethercatcoe.h"
 
+// MEssage logger
+//#include <message_logger/message_logger.hpp>
+
+
+
 /** SDO structure, not to be confused with EcSDOserviceT */
 PACKED_BEGIN
 typedef struct PACKED
@@ -170,6 +175,8 @@ int ecx_SDOread(ecx_contextt *context, uint16 slave, uint16 index, uint8 subinde
    /* Empty slave out mailbox if something is in. Timout set to 0 */
    wkc = ecx_mbxreceive(context, slave, (ec_mbxbuft *)&MbxIn, 0);
    ec_clearmbx(&MbxOut);
+   //std::cout << " Test " << std::endl;
+      
    aSDOp = (ec_SDOt *)&MbxIn;
    SDOp = (ec_SDOt *)&MbxOut;
    SDOp->MbxHeader.length = htoes(0x000a);

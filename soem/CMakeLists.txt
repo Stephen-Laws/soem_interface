@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 2.8.4)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules")
 project(soem_rsl)
 
-find_package(catkin REQUIRED)
-
 if(DEFINED HOST_INSTALL)
    set(SOEM_INCLUDE_INSTALL_DIR include/soem/soem)
 else()
